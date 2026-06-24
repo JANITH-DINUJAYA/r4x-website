@@ -158,7 +158,8 @@ export default function Admin() {
   // Login view
   if (!login) {
     return (
-      <div className="container" style={{ maxWidth: "450px", marginTop: "40px" }}>
+      <div className="admin-page" style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: "100vh", padding: "20px" }}>
+      <div className="container" style={{ maxWidth: "450px", width: "100%", paddingTop: "0" }}>
         <div className="glass" style={{ padding: "40px 30px", textAlign: "center" }}>
           
           <img src="/logo.jpg" alt="R4X" style={{ width: "80px", height: "80px", borderRadius: "50%", border: "2px solid #39FF14", objectFit: "cover", marginBottom: "20px" }} />
@@ -210,12 +211,13 @@ export default function Admin() {
 
         </div>
       </div>
+      </div>
     );
   }
 
   // Dashboard view
   return (
-    <div className="container">
+    <div className="admin-page"><div className="container" style={{ paddingTop: "40px" }}>
       
       {/* HEADER */}
       <div className="glass" style={{
@@ -418,6 +420,6 @@ export default function Admin() {
 
       </div>
 
-    </div>
+    </div></div>
   );
 }

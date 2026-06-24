@@ -1,6 +1,16 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  // Hide navbar completely on the admin portal
+  if (pathname.startsWith("/r4x-admin-portal")) {
+    return null;
+  }
+
   return (
     <nav className="navbar">
 

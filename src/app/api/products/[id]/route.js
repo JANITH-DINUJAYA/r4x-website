@@ -5,8 +5,9 @@ import { resolveProductImage } from "../../../../lib/image-resolver";
 export async function DELETE(req, { params }) {
   try {
     await connectDB();
+    const { id } = await params;
 
-    await Product.findByIdAndDelete(params.id);
+    await Product.findByIdAndDelete(id);
 
     return Response.json({
       success: true,
@@ -23,6 +24,7 @@ export async function DELETE(req, { params }) {
 export async function PUT(req, { params }) {
   try {
     await connectDB();
+    const { id } = await params;
 
     const body = await req.json();
 
@@ -32,7 +34,7 @@ export async function PUT(req, { params }) {
     }
 
     const updated = await Product.findByIdAndUpdate(
-      params.id,
+      id,
       { $set: body },
       { new: true, runValidators: true }
     );

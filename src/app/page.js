@@ -53,7 +53,7 @@ export default function Home() {
         Engineered for professional eSports competitors and gaming enthusiasts.
       </p>
 
-      <div className="grid">
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "25px", marginTop: "40px" }}>
         
         <div className="glass card-premium">
           <div className="card-icon"><FaRocket /></div>

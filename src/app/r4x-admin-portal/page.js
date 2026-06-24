@@ -178,7 +178,7 @@ export default function Admin() {
       ...prev,
       title: titleVal,
       whatsappMessage: titleVal
-        ? `Hi R4X Sensi, I would like to buy the ${titleVal} (${prev.price || "$9.99"}).`
+        ? `Hi R4X Sensi, I would like to buy the ${titleVal} (${prev.price || "Rs 9.99"}).`
         : ""
     }));
   };
@@ -308,7 +308,7 @@ export default function Admin() {
               </div>
               <div>
                 <label style={{ fontSize: "0.8rem", color: "var(--text-muted)", textTransform: "uppercase" }}>Price</label>
-                <input type="text" className="input-glass" placeholder="e.g. $9.99" value={form.price} onChange={handlePriceChange} required style={{ marginTop: "5px" }} />
+                <input type="text" className="input-glass" placeholder="e.g. Rs 9.99" value={form.price} onChange={handlePriceChange} required style={{ marginTop: "5px" }} />
               </div>
             </div>
 
@@ -375,7 +375,7 @@ export default function Admin() {
                         </div>
                       </td>
                       <td><span style={{ fontSize: "0.8rem", fontWeight: "700" }}>{p.category}</span></td>
-                      <td><span style={{ color: "var(--neon)", fontWeight: "700" }}>{p.price}</span></td>
+                      <td><span style={{ color: "var(--neon)", fontWeight: "700" }}>{p.price ? p.price.replace('$', 'Rs ') : ''}</span></td>
                       <td>
                         <div style={{ display: "flex", gap: "8px", justifyContent: "center" }}>
                           {/* EDIT BUTTON */}

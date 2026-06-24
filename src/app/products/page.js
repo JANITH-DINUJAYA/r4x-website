@@ -150,12 +150,12 @@ export default function Products() {
                   fontSize: "1.4rem",
                   textShadow: "0 0 10px rgba(57, 255, 20, 0.3)"
                 }}>
-                  {p.price}
+                  {p.price ? p.price.replace('$', 'Rs ') : ''}
                 </span>
 
                 <a
                   className="btn btn-primary"
-                  href={`https://wa.me/94725686864?text=${encodeURIComponent(p.whatsappMessage)}`}
+                  href={`https://wa.me/94725686864?text=${encodeURIComponent(p.whatsappMessage ? p.whatsappMessage.replace(/\$/g, 'Rs ') : '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
